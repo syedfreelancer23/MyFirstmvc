@@ -1,0 +1,35 @@
+﻿
+
+@using Microsoft.AspNetCore.Http.Extensions
+@using Microsoft.EntityFrameworkCore.Metadata
+@model System.Collections.Generic.IList<MyFirstmvc.Models.Customer>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<p>Original URL: @Context.Request.GetEncodedUrl()</p>
+<div class="container">
+<table class="table">
+    <thead><tr>
+        <th></th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr></thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SurName</td>
+                <td>@item.Name</td>
+                <td>@item.DateOfBirth</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>
